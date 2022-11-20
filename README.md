@@ -2,4 +2,4 @@
 
 ![frst img](/img/1.jpg)
 
-iOS App for create wallspaper hidding eyebrow on the iPhone.
+iOS App creates wallspaper hidding eyebrow on the iPhone.
