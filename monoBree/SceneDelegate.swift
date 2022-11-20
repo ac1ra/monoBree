@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  monoBree_v01
+//  monoBree
 //
-//  Created by ac1ra on 14.11.2022.
+//  Created by ac1ra on 20.11.2022.
 //
 
 import UIKit

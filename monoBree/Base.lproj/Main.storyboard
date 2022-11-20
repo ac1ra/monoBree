@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="monoBree" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="6wT-rz-Q0T">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10n-kM-lw8">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="1cs-Jw-2rW" appends="YES" id="8sz-VW-q4X"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="1Po-eP-aHY"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="ec5-9U-6AK"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YQR-up-rH9"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6wT-rz-Q0T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0n9-V9-RzX"/>
+                            <constraint firstItem="6wT-rz-Q0T" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="MjM-sy-Jy5"/>
+                            <constraint firstItem="6wT-rz-Q0T" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="l4I-qj-F9S"/>
+                            <constraint firstItem="6wT-rz-Q0T" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ruU-Bh-Drh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainImageVIew" destination="10n-kM-lw8" id="ERu-8z-FXp"/>
+                        <outlet property="scrollView" destination="6wT-rz-Q0T" id="Akv-8G-DIR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="1cs-Jw-2rW">
+                    <connections>
+                        <action selector="doubleTapImg:" destination="BYZ-38-t0r" id="oAO-37-uUw"/>
+                        <outlet property="delegate" destination="6wT-rz-Q0T" id="I90-lI-shC"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-53.623188405797109" y="-38.169642857142854"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
