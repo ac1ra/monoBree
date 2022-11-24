@@ -23,8 +23,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
         
-        prefersHomeIndicatorAutoHidden
-        
         iScreenSizes()
     }
     @objc
