@@ -23,7 +23,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
         
+        prefersHomeIndicatorAutoHidden
+        
         iScreenSizes()
+    }
+    @objc
+    func upSwipe() {
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker,animated: true,completion: nil)
     }
 
     private func setMinZoomScaleForImageSize(_ imageSize: CGSize){
@@ -60,7 +67,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         dismiss(animated: true, completion: nil)
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let up = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.upSwipe))
+        up.direction = .up
+        self.mainImageVIew.addGestureRecognizer(up)
+    }
+    
     @IBAction func doubleTapImg(_ sender: UITapGestureRecognizer) {
         if scrollView.zoomScale == scrollView.minimumZoomScale{
             scrollView.zoom(to: zoomRectangle(scale: scrollView.maximumZoomScale, center: sender.location(in: sender.view)), animated: true)
@@ -220,7 +234,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                         print("not listed in function")
                     }
                 }
-
+    override var prefersHomeIndicatorAutoHidden: Bool {
+            return true
+    }
 }
 
 extension ViewController: UIScrollViewDelegate{
